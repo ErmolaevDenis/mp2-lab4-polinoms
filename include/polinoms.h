@@ -43,8 +43,8 @@ public:
     void Set();
     List<Monom>& getPolinom() { return polinom; }
     void Print();
-    friend Polinom operator+(Polinom& p1, Polinom& p2);
-    friend Polinom operator*(Polinom& p1, double coef);
-    friend Polinom operator-(Polinom& p1, Polinom& p2);
-    friend Polinom operator*(Polinom& p1, Polinom& p2);
+    Polinom operator+(Polinom& other);
+    Polinom operator*(double coef);
+    Polinom operator-(Polinom& other);
+    Polinom operator*(Polinom& other);
 };

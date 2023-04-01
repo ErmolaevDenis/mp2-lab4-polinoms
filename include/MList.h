@@ -47,15 +47,15 @@ public:
     Node<T>* getFirst() { return head->next; }
     void sortInsert(const T& val)
     {
+        Node<T>* elem = new Node<T>(val);
+        Node<T>* p = head;
+        if (isEmpty())
         {
-            Node<T>* elem = new Node<T>(val);
-            Node<T>* p = head;
-            if (isEmpty())
-            {
-                p->next = elem;
-                p = elem;
-                return;
-            }
+            p->next = elem;
+            p = elem;
+        }
+        else
+        {
             Node<T>* p_next = head->next;
             while (p_next && elem->data < p_next->data)
             {
